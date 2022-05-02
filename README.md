@@ -1,16 +1,22 @@
 # Learning from rationales
 
-This is 
+This is the code for What to Learn, and How: Toward Effective Learning from Rationales
+ https://arxiv.org/abs/2112.00071
+ 
+ It has scripts for the following:
  * Generating/downloading text classification datasets, especially those with rationales
- * Running model training experiments (i.e. sweeps over hyperparameter selections) over them
+ * Running model training experiments (i.e. sweeps over hyperparameter selections) over them, either doing unsupervised rationalization or learning from human rationales
  
 
+
 ## Quickstart
+
+These are basic instructions for getting the repo up and running. Instructions for replicating the paper results are coming soon. 
 
 ### Installation
 
 Clone the branch:
-`git clone -b slim_rationale https://github.com/shcarton/learn_from_explanations_v2.git [destination]`
+`git clone https://github.com/ChicagoHAI/learning-from-rationales.git [destination]`
  
 Install the requirements: enter the project root directory, and run `pip install -e .` to install various modules in the requirements.txt .
 
@@ -109,6 +115,6 @@ in the trainer_params or trainer config can be helpful.
 
 #### What if I have other questions?
 
-Email me at samuel.carton@gmail.com
+Email me at carton@uchicago.edu
 
 
