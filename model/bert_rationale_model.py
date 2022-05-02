@@ -112,6 +112,7 @@ class BertRationaleModel(pl.LightningModule):
 
 		result = {}
 
+		#Generate predicted rationale
 		generator_inputs_embeds = self.generator_word_embedding_fn(input_ids)
 		generator_padding_mask = padding_mask
 
@@ -162,6 +163,7 @@ class BertRationaleModel(pl.LightningModule):
 
 		result['predicted_rationale'] = predicted_rationale
 
+		#Generate rationalized prediction
 		predictor_inputs_embeds = self.predictor_word_embedding_fn(input_ids)
 
 		predictor_mask_result = mask_embeddings(inputs_embeds=predictor_inputs_embeds,
@@ -181,6 +183,7 @@ class BertRationaleModel(pl.LightningModule):
 
 		result['py_index'], result['py_probs'] = process_py_logits(result['py_logits'])
 
+		#Calculate most losses
 		if label is not None:
 			prediction_losses = cross_entropy(result['py_logits'], label, reduction='none')
 			prediction_loss = result['prediction_loss'] = prediction_losses.mean()
@@ -297,7 +300,7 @@ class BertRationaleModel(pl.LightningModule):
 			raise Exception('No warmup right now')
 		return optimizers
 
-	def training_step(self, batch, batch_idx, optimizer_idx=None, ):
+	def training_step(self, batch, batch_idx, optimizer_idx=None):
 
 		if self.train_with_human_input_masks:
 			batch['input_mask'] = batch['human_rationale']
