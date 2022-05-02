@@ -1,0 +1,9 @@
+nltk==3.4.5
+pytorch-lightning==1.0.6
+torch==1.9.0
+transformers==4.3.3
+torch-scatter==2.0.7 -f https://pytorch-geometric.com/whl/torch-1.9.0+${CUDA}.html #see https://github.com/rusty1s/pytorch_scatter for instructions
+pytz==2019.3
+pandas==1.0.1
+
+

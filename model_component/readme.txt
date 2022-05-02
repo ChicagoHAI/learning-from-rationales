@@ -1,0 +1,1 @@
+Various functions and classes that implement functionality taking place within the model, such as masking
