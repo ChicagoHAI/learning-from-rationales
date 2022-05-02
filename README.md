@@ -15,7 +15,7 @@ These are basic instructions for getting the repo up and running. Instructions f
 
 ### Installation
 
-Clone the branch:
+Clone the repo:
 `git clone https://github.com/ChicagoHAI/learning-from-rationales.git [destination]`
  
 Install the requirements: enter the project root directory, and run `pip install -e .` to install various modules in the requirements.txt .
