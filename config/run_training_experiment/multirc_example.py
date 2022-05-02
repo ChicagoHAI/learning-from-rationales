@@ -61,17 +61,14 @@ config = {
 			'model_params': {
 				'comment': 'Standalone unsupervised rationale model',
 				'prediction_loss_weight': 1.0,
-				'sparsity_loss_weight': [
-					0.0
-				],
+				'sparsity_loss_weight': [0.0],
 				'human_rationale_loss_weight': [1.0],
 				'provided_input_mask_method': 'assign_end',
 				'predicted_rationale_masking_method': ['multiply_zero'],
 				'predicted_rationale_binarization_method': ['gumbel_softmax'],
 				'learning_rate': 2e-5,
-				'rationalize_by_sentence':[True],
+				'rationalize_by_sentence':[False, True],
 				# 'split_human_rationale_representation':[True],
-
 
 			},
 			'pretrain': [

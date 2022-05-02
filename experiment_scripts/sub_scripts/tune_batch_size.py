@@ -1,4 +1,3 @@
-from model.old.base_model import BaseModel
 from lightning_component.trainer import ModifiedTrainer
 from util.dataset import RationaleDataset
 from typing import Dict, Callable
@@ -8,9 +7,10 @@ from util.read_data_util import read_dataset
 from model.resolve_model_class import resolve_model_class
 from util.gpu_util import choose_gpus
 from typing import List
+from pytorch_lightning import LightningModule
 
 def tune_batch_size(
-		model: BaseModel = None,
+		model: LightningModule = None,
 		trainer: ModifiedTrainer = None,
 		train_dataset: RationaleDataset = None,
 		val_dataset: RationaleDataset = None,

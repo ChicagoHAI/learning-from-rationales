@@ -1,6 +1,6 @@
-from model.old.base_model import BaseModel
 from transformers import BertModel, BertTokenizerFast
 # from transformers.modeling_bert import BertModel
+from pytorch_lightning import LightningModule
 import torch
 import torch.nn as nn
 from model_component.masking import process_py_logits, mask_input, masked_mean, create_rationale_embedding_function
@@ -24,7 +24,7 @@ Standard BERT classification model
 
 seed= 1234
 
-class BertClassificationModel(BaseModel):
+class BertClassificationModel(LightningModule):
 
 	def __init__(self,
 				 *args,
@@ -197,7 +197,7 @@ class BertClassificationModel(BaseModel):
 
 		return loss
 
-	def load_from_pretrained(self, model: BaseModel, load_from: str=None, **kwargs):
+	def load_from_pretrained(self, model: LightningModule, load_from: str=None, **kwargs):
 		iprint(f'Loading parameters from pretrained model of class {model.__class__}')
 		if model.__class__.__name__ == 'BertRationaleModel':
 			iprint('Loading BertRationaleModel parameters into model')

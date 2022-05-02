@@ -17,6 +17,8 @@ from util.print_util import iprint
 from model_component.scatter import scatter_mean_gather_batch, scatter_mean_batch
 # import torch_scatter as ts
 
+# from transformers.modeling_bert import BertModel
+
 class BertRationaleModel(pl.LightningModule):
 	def __init__(self,
 				 *args,

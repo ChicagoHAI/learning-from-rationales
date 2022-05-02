@@ -2,9 +2,8 @@ import os
 from traceback import print_exc
 
 import pandas as pd
-
+from pytorch_lightning import LightningModule
 from lightning_component.trainer import ModifiedTrainer
-from model.old.base_model import BaseModel
 from util.dataloader import RationaleDataloader
 from util.dataset import RationaleDataset
 from util.display_util import sample_and_output_as_html
@@ -13,7 +12,7 @@ from typing import Sequence
 
 seed = 83782
 
-def test_model(model:BaseModel,
+def test_model(model:LightningModule,
 			   trainer:ModifiedTrainer,
 			   output_prefix:str,
 			   dataset:RationaleDataset,
