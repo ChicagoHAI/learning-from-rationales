@@ -76,7 +76,7 @@ def run_experiment(experiment_config: Dict):
 		iprint(f'Starting {desc}')
 		train_model_within_experiment(output_dir, config)
 
-		iprint(f'Ann has allowed us to be finished with {desc}')
+		iprint(f'Finished with {desc}')
 
 	iprint('Terminus est...')
 	return
